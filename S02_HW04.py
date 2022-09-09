@@ -16,14 +16,14 @@ positionElement = []                                                #Созда�
 for i in splitList:
     positionElement.append(int(i))
 
-sum = 0
+multip = 1
 number = 0
 
 print("Выбранные элементы списка: ")
 
-for i, i in enumerate(positionElement):                             #Суммирование выбранных элементов списка
+for i, i in enumerate(positionElement):                             #Произведение выбранных элементов списка
     number = list[i]
-    sum += number
+    multip *= number
     print(number)
    
-print(f"Сумма выбранных элементов в списке равна: {sum}")
+print(f"Произведение выбранных элементов в списке равна: {multip}")
