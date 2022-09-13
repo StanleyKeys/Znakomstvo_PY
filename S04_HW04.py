@@ -19,21 +19,23 @@ indexes = {"0": "\u2070",
            "-": "\u207B"
            }
 
-k = int(input("Введите натуральную степень k: "))
-l = int(input("Введите натуральную степень l, если она есть: "))
+k = input("Введите натуральную степень k: ")
+l = input("Введите натуральную степень l, если она есть: ")
 
-if (l < 2):                                         # Проверка полученного числа k, l на положительную степень
-    l = ""
-if (k < 2):
-    k = ""  
+def DegreeCheck(degree):
+    if (degree != ""):                                       # Проверка полученного числа k, l на положительную степень
+        degree = int(degree)
+        if (degree < 2):
+            degree = ""
+    return degree
 
 
 a = 0
 def RandomNumbers(d):                               # Заполение уравнения случайными числами
-    d = random.randint(0, 100)
+    d = random.randint(2, 100)
     return d
 
-def degree(a: int):                                 # Метод написания степени у многочлена
+def DegreePrint(a: int):                                 # Метод написания степени у многочлена
     degrees = ""
     temp = str(a)
     for char in temp:
@@ -41,5 +43,4 @@ def degree(a: int):                                 # Метод написан�
     return degrees
 
 
-print(f"Уравнение: {RandomNumbers(a)}x{degree(k)} + {RandomNumbers(a)}y{degree(l)} - {RandomNumbers(a)} = 0")
-
+print(f"Уравнение: {RandomNumbers(a)}x{DegreePrint(DegreeCheck(k))} + {RandomNumbers(a)}y{DegreePrint(DegreeCheck(l))} - {RandomNumbers(a)} = 0")
