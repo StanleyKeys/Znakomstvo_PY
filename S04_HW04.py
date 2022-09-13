@@ -5,6 +5,9 @@
 
 - k=2 => 2*x² + 4*x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 """
+from operator import truediv
+import random
+
 import os                                   # Код
 clear = lambda: os.system('cls')            # очистки
 clear()                                     # терминала
