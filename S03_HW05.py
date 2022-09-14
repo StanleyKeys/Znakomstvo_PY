@@ -3,27 +3,30 @@
 Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
 """
 
-fib1 = fib2 = 1
- 
+fib1 = fib2 = 1 
 userNumber = int(input(" Введите число: "))
  
 
-fibbList = []
-fibbList.append(fib1)
-fibbList.append(fib2)
+fibList = []
+fibList.append(fib1)
+fibList.append(fib2)
 for i in range(2, userNumber):                          #Подсчет чисел Фибоначчи и заполнение списка
     fib1, fib2 = fib2, fib1 + fib2
-    
-    fibbList.append(fib2)
-    #print(fib2, end=' ')
-print(fibbList)
+    fibList.append(fib2)
 
-negativefibb = []
+if (i == userNumber-1):
+    fib1 = fib2 = 1
 
-for i in reversed(fibbList):                            # Cоздание отрицательного списка, и перевёрнутого.
-    negativefibb.append(i*-1)
+negaFib = []
+for i in range(-1, userNumber):                          # Cоздание отрицательного списка, и перевёрнутого.
+    fib1, fib2 = fib2, fib1 - fib2
+    negaFib.append(fib2)
 
-print(negativefibb)
+print(fibList)                                           # Создание развернутого списка
+reverseFib = []
+for i in reversed(negaFib):
+    reverseFib.append(i)
 
-print(f"Список Фибоначчи числа '{userNumber}' равна: {negativefibb+[0]+fibbList}")
+print(reverseFib)
+print(f"Список Фибоначчи числа '{userNumber}' равна: {reverseFib + fibList}")
 
