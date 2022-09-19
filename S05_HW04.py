@@ -85,7 +85,7 @@ def ZipFileRLE():
     with open("zipOutput.txt", "w") as file:                                       # Запись в файл
         file.write(rleText)
     print('\nСжатие записано в файл "zipOutput.txt"')
-#==============================================================    # Сжатие файла unzipInput.txt в файл unzipOutput.txt
+#==============================================================    # Разжатие файла unzipInput.txt в файл unzipOutput.txt
 def UnzipFIleRLE():   
     unzipList = []
     def RLE(a):
@@ -116,7 +116,7 @@ def UnzipFIleRLE():
     print('\nРазжатие записано в файл "unzipOutput.txt"')
 #==============================================================
 userInput = int(input("Выберите действие RLE: \
-                    \n1. Сжать текст\n2.Разжать текст \
+                    \n1. Сжать текст\n2. Разжать текст \
                     \n3. Сжать текстовый файл \
                     \n4. Разжать текстовый файл\n"))
 if (userInput == 1):
