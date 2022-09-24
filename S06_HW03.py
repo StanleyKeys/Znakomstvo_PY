@@ -6,20 +6,14 @@ def UserInput(inputText):                                   # Метод вво�
     userEnter = input(f"{inputText}")
     return userEnter                                  
 
-
 def FillList(list):                                         # Метод заполнения списка
-    userList = []                                                
-    for i in list:
-        userList.append(float(i))   
+    userList = [i for i in list]                                               
     return userList
 
 userEnter = map(float, UserInput("Введите вещественные числа через пробел: ").split(" "))
 newList = list(FillList(userEnter))
-integerList = []
-for i in newList:
-    integerNumber = i - int(i)
-    integerList.append(integerNumber)
-    
+integerList = [(i - int(i)) for i in newList]
+
 differ = max(integerList) - min(integerList)                # Функция расчет максимального и минимального числа в списке  
 
 answer = round(float(int(differ*1000)/1000), 2)                          #Перевод вещественного числа в целое с умножением 2-ух остатков и обратно для красоты
