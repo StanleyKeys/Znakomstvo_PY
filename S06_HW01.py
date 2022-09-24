@@ -4,18 +4,10 @@
 from typing import List
 
 n = int(input(" Введите число: "))                                  # Заполнение списка числами от -N до N
-list = []
-for i in range(-n, n+1):
-    list.append(i)                                                  # end
+
+list = [i for i in range(-n, n+1)]
 
 print(f"Ваш список от -{n} до {n} = {list}")
-
-# listElement = input(" Введите позицию элемента через пробел: ")
-# splitList = listElement.split(" ")                                  #Создание нового списка и разделение старого
-
-# positionElement = []                                                #Создание списка из введеных пользователем элементов
-# for i in splitList:
-#     positionElement.append(int(i))
 
 listElement = map(int, input(" Введите позицию элемента через пробел: ").split(" "))
 
